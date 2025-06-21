@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Level1_Task1 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Temperature Value: ");
+        double temp = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.println("Enter the Temperature's Unit (Celsius/Fahrenheit): ");
+        String unit = scanner.nextLine().trim().toLowerCase();
+
+        if (unit.equals("celsius") || unit.equals("c")) {
+
+            double fahrenheit = (temp * 9.0 / 5) + 32;
+            System.out.println();
+            System.out.printf("Converted to Fahrenheit: %.2f°F\n" ,fahrenheit);
+        }
+        else if (unit.equals("fahrenheit") || unit.equals("f")) {
+
+            double celsius = (temp - 32) * 5.0 / 9;
+            System.out.println();
+            System.out.printf("Converted to Celsius: %.2f°C\n" ,celsius);
+        }
+        else {
+            System.out.println("Invalid Unit. Please enter 'C' or 'F'.");
+        }
+    }
+}
